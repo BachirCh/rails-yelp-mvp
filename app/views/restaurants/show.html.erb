@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Restaurant: <%= @restaurant.name %></h1>
+  <h3>Category: <%= @restaurant.category %></h3>
+  <h3>Address: <%= @restaurant.address %></h3>
+  <%#= link_to "Rate this restaurant", new_restaurant_review_path(@restaurant), class: "btn btn-warning" %>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: 1..5 %>
+    <%= f.submit "add rating", class: "btn btn-success" %>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= @restaurant.name %>'s reviews</h1>
+  <% @reviews.each do |review| %>
+  <div class="card col-4 p-3 text-center align-middle my-2 mx-auto">
+    <h4><%= review.content %></h4>
+    <h4 style="font-size: 24px; color: yellow"><% review.rating.times do %><i class="fas fa-star"></i><% end %></h4>
+  </div>
+  <% end %>
+</div>
